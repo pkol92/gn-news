@@ -1,19 +1,23 @@
-import React from 'react';
+import React, { FC, PropsWithChildren, ReactNode } from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
 import './Modal.css';
 import { Cross2Icon } from '@radix-ui/react-icons';
 
-export const Modal = () => {
+interface ModalProps {
+  trigger: ReactNode;
+  content: ReactNode;
+}
+
+export const Modal: FC<ModalProps> = ({ trigger, content }) => {
   return (
     <Dialog.Root>
       <Dialog.Trigger asChild>
-        <button className="Button">modal</button>
+        <button className="Button">{trigger}</button>
       </Dialog.Trigger>
       <Dialog.Portal>
         <Dialog.Overlay className="DialogOverlay" />
         <Dialog.Content className="DialogContent">
-          <Dialog.Title className="DialogTitle">Tytuł</Dialog.Title>
-          <Dialog.Description className="DialogDescription">Opis</Dialog.Description>
+          {content}
 
           <Dialog.Close asChild>
             <button className="IconButton" aria-label="Close">
@@ -23,5 +27,22 @@ export const Modal = () => {
         </Dialog.Content>
       </Dialog.Portal>
     </Dialog.Root>
+  );
+};
+
+export const ModalMenu = () => {
+  const content = (
+    <>
+      <Dialog.Title className="DialogTitle">Tytuł</Dialog.Title>
+      <Dialog.Description className="DialogDescription">Opis</Dialog.Description>
+    </>
+  );
+
+  const trigger = 'Klik';
+
+  return (
+    <>
+      <Modal content={content} trigger={trigger} />
+    </>
   );
 };
