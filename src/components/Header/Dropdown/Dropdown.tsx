@@ -8,7 +8,7 @@ export const DropdownElement = () => {
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger asChild>
-        <button className="IconButton" aria-label="Customise options">
+        <button className="" aria-label="Customise options">
           Widok
         </button>
       </DropdownMenu.Trigger>
