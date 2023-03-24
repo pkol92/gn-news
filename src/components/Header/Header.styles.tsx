@@ -8,6 +8,16 @@ export const HeaderWrapper = styled.div`
   padding: 12px;
   justify-content: space-between;
   align-items: baseline;
+  position: fixed;
+  height: 80px;
+  width: 100%;
+  box-sizing: border-box;
+`;
+
+export const FakeHeaderWrapper = styled.div`
+  height: 80px;
+  width: 100%;
+  box-sizing: border-box;
 `;
 
 export const LogoWrapper = styled.h1`
