@@ -2,14 +2,14 @@ import React from 'react';
 
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 
-import './DropDown.css';
+import './Dropdown.css';
 
-export const Dropdown = () => {
+export const DropdownElement = () => {
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger asChild>
         <button className="IconButton" aria-label="Customise options">
-          Widok listy
+          Widok
         </button>
       </DropdownMenu.Trigger>
 
