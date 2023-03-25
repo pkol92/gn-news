@@ -10,6 +10,7 @@ export const CardsWrapper = styled.div<{ isCard: boolean }>`
 
   button {
     width: ${({ isCard }) => (isCard ? 'auto' : '100%')};
+    max-width: ${({ isCard }) => (isCard ? '100%' : '750px')};
   }
 `;
 
