@@ -52,7 +52,11 @@ export const Card: FC<CardProps> = ({ article, isCard = false }) => {
   const modalContent = (
     <Dialog.Description>
       <ModalContentWrapper>
-        <ContentWrapper>{content?.slice(0, content.indexOf('['))}</ContentWrapper>
+        {content && (
+          <ContentWrapper
+            dangerouslySetInnerHTML={{ __html: content?.slice(0, content.indexOf('[')) }}
+          />
+        )}
 
         <LinkInfoWrapper>
           Żeby przeczytać pełny artykuł kliknij w
