@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from 'react';
+import React, { FC } from 'react';
 import { Article } from '../../api/getNews';
 import { Modal } from '../Header/Modal/Modal';
 import {
@@ -20,10 +20,10 @@ import { format, parseISO } from 'date-fns';
 
 interface CardProps {
   article: Article;
-  isCard?: boolean;
+  isCard: boolean;
 }
 
-export const Card: FC<CardProps> = ({ article, isCard = false }) => {
+export const Card: FC<CardProps> = ({ article, isCard }) => {
   const { title, description, author, url, content, publishedAt, source, urlToImage } = article;
 
   const cardView = (
@@ -42,8 +42,10 @@ export const Card: FC<CardProps> = ({ article, isCard = false }) => {
   const listView = (
     <ListWrapper>
       <h4>{title}</h4>
-      <p>{source.name.toUpperCase()}</p>
-      <p>{format(parseISO(publishedAt), 'dd/MM/yyyy')}</p>
+      <div>
+        <p>{source.name.toUpperCase()}</p>
+        <p>{format(parseISO(publishedAt), 'dd/MM/yyyy')}</p>
+      </div>
     </ListWrapper>
   );
 
@@ -52,7 +54,11 @@ export const Card: FC<CardProps> = ({ article, isCard = false }) => {
   const modalContent = (
     <Dialog.Description>
       <ModalContentWrapper>
-        <ContentWrapper>{content?.slice(0, content.indexOf('['))}</ContentWrapper>
+        {content && (
+          <ContentWrapper
+            dangerouslySetInnerHTML={{ __html: content?.slice(0, content.indexOf('[')) }}
+          />
+        )}
 
         <LinkInfoWrapper>
           Żeby przeczytać pełny artykuł kliknij w

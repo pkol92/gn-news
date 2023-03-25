@@ -3,8 +3,12 @@ import React from 'react';
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 
 import './Dropdown.css';
+import { useDispatch } from 'react-redux';
+import { card, list } from '../../../slices/panelViewSlice';
 
 export const DropdownElement = () => {
+  const dispatch = useDispatch();
+
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger asChild>
@@ -18,14 +22,14 @@ export const DropdownElement = () => {
           <DropdownMenu.Item
             className="DropdownMenuItem"
             onClick={() => {
-              console.log('to do');
+              dispatch(list());
             }}>
             Lista
           </DropdownMenu.Item>
           <DropdownMenu.Item
             className="DropdownMenuItem"
             onClick={() => {
-              console.log('to do');
+              dispatch(card());
             }}>
             Kafelki
           </DropdownMenu.Item>
