@@ -1,4 +1,4 @@
-import React, { FC, PropsWithChildren, ReactNode } from 'react';
+import React, { FC, ReactNode } from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
 import './Modal.css';
 import { Cross2Icon } from '@radix-ui/react-icons';

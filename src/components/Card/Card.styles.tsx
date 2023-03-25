@@ -1,12 +1,19 @@
 import styled from 'styled-components';
 
+export const InfoWrapper = styled.div`
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  width: 100%;
+`;
+
 export const CardWrapper = styled.div`
   display: flex;
-  width: 350px;
   flex-direction: column;
-
   align-items: flex-start;
   gap: 15px;
+  padding-bottom: 20px;
+  width: 350px;
 `;
 
 export const TitleWrapper = styled.div`
@@ -41,13 +48,6 @@ export const DescriptionWrapper = styled.div`
   text-align: justify;
 `;
 
-export const InfoWrapper = styled.div`
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  width: 100%;
-`;
-
 export const LinkWrapper = styled.a`
   text-decoration: none;
   font-size: 14px;
@@ -77,4 +77,27 @@ export const ModalContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
+`;
+
+export const ListWrapper = styled.div`
+  display: grid;
+  grid-template-columns: auto 200px 100px;
+  gap: 15px;
+  align-items: baseline;
+
+  width: 100%;
+
+  h4 {
+    text-align: left;
+    display: grid;
+    font-weight: 500;
+    font-size: 18px;
+  }
+
+  p {
+    text-align: right;
+    display: grid;
+    font-size: 14px;
+    font-weight: 400;
+  }
 `;

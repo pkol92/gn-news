@@ -1,12 +1,16 @@
 import styled from 'styled-components';
 
-export const CardsWrapper = styled.div`
+export const CardsWrapper = styled.div<{ isCard: boolean }>`
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 40px;
   align-items: flex-start;
   justify-content: center;
-  padding: 20px;
+  padding: 30px;
+
+  button {
+    width: ${({ isCard }) => (isCard ? 'auto' : '100%')};
+  }
 `;
 
 export const InfoWrapper = styled.h2`

@@ -11,7 +11,7 @@ export const Panel = () => {
   }
 
   return (
-    <CardsWrapper>
+    <CardsWrapper isCard={false}>
       {!isError && data?.articles.map((article, index) => <Card key={index} article={article} />)}
 
       {isError && <InfoWrapper>Ups coś poszło nie tak</InfoWrapper>}

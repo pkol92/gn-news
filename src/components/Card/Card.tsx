@@ -10,6 +10,7 @@ import {
   InfoWrapper,
   LinkInfoWrapper,
   LinkWrapper,
+  ListWrapper,
   ModalContentWrapper,
   SourceWrapper,
   TitleWrapper,
@@ -22,21 +23,31 @@ interface CardProps {
   isCard?: boolean;
 }
 
-export const Card: FC<CardProps> = ({ article, isCard = true }) => {
+export const Card: FC<CardProps> = ({ article, isCard = false }) => {
   const { title, description, author, url, content, publishedAt, source, urlToImage } = article;
 
-  const trigger = (
+  const cardView = (
     <CardWrapper>
-      {isCard && urlToImage && <ImgWrapper src={urlToImage} alt={title} />}
+      {urlToImage && <ImgWrapper src={urlToImage} alt={title} />}
       <TitleWrapper>{title}</TitleWrapper>
       <InfoWrapper>
         <SourceWrapper>{source.name.toUpperCase()}</SourceWrapper>
         <DateWrapper>{format(parseISO(publishedAt), 'dd/MM/yyyy')}</DateWrapper>
       </InfoWrapper>
 
-      {isCard && <DescriptionWrapper>{description}</DescriptionWrapper>}
+      <DescriptionWrapper>{description}</DescriptionWrapper>
     </CardWrapper>
   );
+
+  const listView = (
+    <ListWrapper>
+      <h4>{title}</h4>
+      <p>{source.name.toUpperCase()}</p>
+      <p>{format(parseISO(publishedAt), 'dd/MM/yyyy')}</p>
+    </ListWrapper>
+  );
+
+  const trigger = isCard ? cardView : listView;
 
   const modalContent = (
     <Dialog.Description>
