@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from 'react';
+import React, { FC } from 'react';
 import { Article } from '../../api/getNews';
 import { Modal } from '../Header/Modal/Modal';
 import {
@@ -20,10 +20,10 @@ import { format, parseISO } from 'date-fns';
 
 interface CardProps {
   article: Article;
-  isCard?: boolean;
+  isCard: boolean;
 }
 
-export const Card: FC<CardProps> = ({ article, isCard = false }) => {
+export const Card: FC<CardProps> = ({ article, isCard }) => {
   const { title, description, author, url, content, publishedAt, source, urlToImage } = article;
 
   const cardView = (
