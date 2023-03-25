@@ -42,8 +42,10 @@ export const Card: FC<CardProps> = ({ article, isCard }) => {
   const listView = (
     <ListWrapper>
       <h4>{title}</h4>
-      <p>{source.name.toUpperCase()}</p>
-      <p>{format(parseISO(publishedAt), 'dd/MM/yyyy')}</p>
+      <div>
+        <p>{source.name.toUpperCase()}</p>
+        <p>{format(parseISO(publishedAt), 'dd/MM/yyyy')}</p>
+      </div>
     </ListWrapper>
   );
 

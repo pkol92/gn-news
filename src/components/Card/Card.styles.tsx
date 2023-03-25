@@ -81,10 +81,9 @@ export const ModalContentWrapper = styled.div`
 
 export const ListWrapper = styled.div`
   display: grid;
-  grid-template-columns: auto 200px 100px;
+  grid-template-columns: auto 300px;
   gap: 15px;
   align-items: baseline;
-
   width: 100%;
 
   h4 {
@@ -92,6 +91,7 @@ export const ListWrapper = styled.div`
     display: grid;
     font-weight: 500;
     font-size: 18px;
+    margin: 0;
   }
 
   p {
@@ -99,5 +99,31 @@ export const ListWrapper = styled.div`
     display: grid;
     font-size: 14px;
     font-weight: 400;
+  }
+
+  div {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: 2fr 1fr;
+  }
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    justify-items: stretch;
+    gap: 5px;
+    align-items: baseline;
+
+    p {
+      font-size: 12px;
+    }
+
+    div p:first-child {
+      text-align: left;
+    }
+
+    div p:last-child {
+      font-size: 10px;
+    }
   }
 `;
