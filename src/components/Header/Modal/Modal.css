@@ -59,7 +59,7 @@ input {
   font-size: 15px;
   line-height: 1;
   font-weight: 500;
-  height: 35px;
+  height: auto;
 }
 
 .IconButton {
