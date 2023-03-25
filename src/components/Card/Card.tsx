@@ -3,10 +3,14 @@ import { Article } from '../../api/getNews';
 import { Modal } from '../Header/Modal/Modal';
 import {
   CardWrapper,
+  ContentWrapper,
   DateWrapper,
   DescriptionWrapper,
   ImgWrapper,
   InfoWrapper,
+  LinkInfoWrapper,
+  LinkWrapper,
+  ModalContentWrapper,
   SourceWrapper,
   TitleWrapper,
 } from './Card.styles';
@@ -36,9 +40,17 @@ export const Card: FC<CardProps> = ({ article, isCard = true }) => {
 
   const modalContent = (
     <Dialog.Description>
-      <p>{content}</p>
-      <p>{author}</p>
-      <a href={`${url}`}>link</a>
+      <ModalContentWrapper>
+        <ContentWrapper>{content?.slice(0, content.indexOf('['))}</ContentWrapper>
+
+        <LinkInfoWrapper>
+          Żeby przeczytać pełny artykuł kliknij w
+          <LinkWrapper href={`${url}`} target="_blank">
+            link
+          </LinkWrapper>
+        </LinkInfoWrapper>
+        <SourceWrapper>{author}</SourceWrapper>
+      </ModalContentWrapper>
     </Dialog.Description>
   );
 

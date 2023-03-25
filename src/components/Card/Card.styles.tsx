@@ -6,7 +6,7 @@ export const CardWrapper = styled.div`
   flex-direction: column;
 
   align-items: flex-start;
-  gap: 10px;
+  gap: 15px;
 `;
 
 export const TitleWrapper = styled.div`
@@ -46,4 +46,35 @@ export const InfoWrapper = styled.div`
   align-items: baseline;
   justify-content: space-between;
   width: 100%;
+`;
+
+export const LinkWrapper = styled.a`
+  text-decoration: none;
+  font-size: 14px;
+  color: #726767;
+  font-weight: 500;
+  :hover {
+    color: black;
+  }
+`;
+
+export const LinkInfoWrapper = styled.a`
+  font-size: 14px;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+`;
+
+export const ContentWrapper = styled.div`
+  font-size: 16px;
+  font-weight: 400;
+  text-align: justify;
+  letter-spacing: 0.5;
+  line-height: 1.5;
+`;
+
+export const ModalContentWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 `;
