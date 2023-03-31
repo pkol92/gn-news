@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { useSelector } from 'react-redux';
-import { CountriesData, useGetNewsFromCountry } from '../../api/getNews';
+import { CountriesData } from '../../api/getNews';
 import { RootState } from '../../store/store';
 import { Card } from '../Card/Card';
 import { CardsWrapper, InfoWrapper } from './Panel.styles';
@@ -13,6 +13,7 @@ interface PanelProps {
 
 export const Panel: FC<PanelProps> = ({ data, isError, isLoading }) => {
   const view = useSelector((state: RootState) => state.panelView.view);
+
   if (!isLoading && data?.articles.length === 0) {
     return <InfoWrapper>Nie ma wiadomości z tego kraju</InfoWrapper>;
   }

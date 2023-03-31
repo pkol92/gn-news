@@ -1,17 +1,14 @@
 import { ButtonWrapper, FakeMenu } from './SideMenu.styles';
 import { Sidebar, Menu, MenuItem, SubMenu, useProSidebar } from 'react-pro-sidebar';
 import { countriesToPick } from './countriesToPick';
-import { useDispatch } from 'react-redux';
-import { pickCountry } from '../../slices/countrySlice';
 
 export const SideMenu = () => {
   const { toggleSidebar } = useProSidebar();
-  const dispatch = useDispatch();
 
-  const handlePick = (code: string) => {
-    dispatch(pickCountry(code));
-    toggleSidebar(false);
-  };
+  // const handlePick = (code: string) => {
+  //   dispatch(pickCountry(code));
+  //   toggleSidebar(false);
+  // };
 
   return (
     <>
@@ -22,6 +19,7 @@ export const SideMenu = () => {
           textAlign: 'left',
           position: 'fixed',
           height: '100%',
+          border: 'none',
         }}
         breakPoint="sm"
         width="150px"
@@ -29,7 +27,7 @@ export const SideMenu = () => {
         <Menu
           menuItemStyles={{
             subMenuContent: () => {
-              return { color: 'white', backgroundColor: 'black' };
+              return { color: 'white', backgroundColor: 'black', textDecoration: 'none' };
             },
             button: () => {
               return {
@@ -47,7 +45,7 @@ export const SideMenu = () => {
             {countriesToPick
               .sort((a, b) => (a.label.toLowerCase() < b.label.toLowerCase() ? 1 : -1))
               .map((country) => (
-                <MenuItem key={country.code} onClick={() => handlePick(country.code)}>
+                <MenuItem key={country.code} href={`country/${country.code}`}>
                   {country.label}
                 </MenuItem>
               ))}

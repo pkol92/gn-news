@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const HeaderWrapper = styled.div`
@@ -5,13 +6,14 @@ export const HeaderWrapper = styled.div`
   flex-direction: row;
   background: black;
   color: white;
-  padding: 12px;
+  padding: 24px;
   justify-content: space-between;
   align-items: baseline;
   position: fixed;
-  height: 80px;
   width: 100%;
   box-sizing: border-box;
+  margin: auto;
+  height: 80px;
 `;
 
 export const FakeHeaderWrapper = styled.div`
@@ -20,7 +22,9 @@ export const FakeHeaderWrapper = styled.div`
   box-sizing: border-box;
 `;
 
-export const LogoWrapper = styled.h1`
+export const LogoWrapper = styled(Link)`
   font-size: 27px;
   font-weight: 400;
+  text-decoration: none;
+  color: white;
 `;
