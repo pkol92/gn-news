@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react';
 import { ButtonWrapper, FakeMenu } from './SideMenu.styles';
 import { Sidebar, Menu, MenuItem, SubMenu, useProSidebar } from 'react-pro-sidebar';
 
 export const SideMenu = () => {
-  const { collapseSidebar, toggled, toggleSidebar, collapsed, broken } = useProSidebar();
+  const { toggleSidebar } = useProSidebar();
 
   return (
     <>
@@ -30,6 +29,9 @@ export const SideMenu = () => {
                   backgroundColor: 'black',
                 },
               };
+            },
+            SubMenuExpandIcon: () => {
+              return { display: 'none' };
             },
           }}>
           <SubMenu label="Kraj" open={true}>
