@@ -7,8 +7,26 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import { Provider } from 'react-redux';
 import { store } from './store/store';
 import { ProSidebarProvider } from 'react-pro-sidebar';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { ErrorPage } from './components/ErrorPage/ErrorPage';
+import { Country, loader as countryLoader } from './routes/country';
 
 const queryClient = new QueryClient();
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <App />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: '/country/:countryCode',
+        element: <Country />,
+        loader: countryLoader(queryClient),
+      },
+    ],
+  },
+]);
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
@@ -16,7 +34,7 @@ root.render(
     <QueryClientProvider client={queryClient} contextSharing={true}>
       <Provider store={store}>
         <ProSidebarProvider>
-          <App />
+          <RouterProvider router={router} />
         </ProSidebarProvider>
       </Provider>
     </QueryClientProvider>

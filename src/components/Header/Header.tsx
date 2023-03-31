@@ -7,7 +7,7 @@ export const Header = () => {
   return (
     <>
       <HeaderWrapper>
-        <LogoWrapper> gnNews</LogoWrapper>
+        <LogoWrapper to={'/'}> gnNews</LogoWrapper>
         <div>
           <DropdownElement />
           <ModalMenu />
