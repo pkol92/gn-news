@@ -32,7 +32,7 @@ export const Card: FC<CardProps> = ({ article, isCard }) => {
       <TitleWrapper>{title}</TitleWrapper>
       <InfoWrapper>
         <SourceWrapper>{source.name.toUpperCase()}</SourceWrapper>
-        <DateWrapper>{format(parseISO(publishedAt), 'dd/MM/yyyy')}</DateWrapper>
+        <DateWrapper>{format(parseISO(publishedAt), 'dd/LL/yyyy')}</DateWrapper>
       </InfoWrapper>
 
       <DescriptionWrapper>{description}</DescriptionWrapper>

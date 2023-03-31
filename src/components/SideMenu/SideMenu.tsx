@@ -1,8 +1,17 @@
 import { ButtonWrapper, FakeMenu } from './SideMenu.styles';
 import { Sidebar, Menu, MenuItem, SubMenu, useProSidebar } from 'react-pro-sidebar';
+import { countriesToPick } from './countriesToPick';
+import { useDispatch } from 'react-redux';
+import { pickCountry } from '../../slices/countrySlice';
 
 export const SideMenu = () => {
   const { toggleSidebar } = useProSidebar();
+  const dispatch = useDispatch();
+
+  const handlePick = (code: string) => {
+    dispatch(pickCountry(code));
+    toggleSidebar(false);
+  };
 
   return (
     <>
@@ -35,9 +44,13 @@ export const SideMenu = () => {
             },
           }}>
           <SubMenu label="Kraj" open={true}>
-            <MenuItem> Polska </MenuItem>
-            <MenuItem> US </MenuItem>
-            <MenuItem> Anglia </MenuItem>
+            {countriesToPick
+              .sort((a, b) => (a.label.toLowerCase() < b.label.toLowerCase() ? 1 : -1))
+              .map((country) => (
+                <MenuItem key={country.code} onClick={() => handlePick(country.code)}>
+                  {country.label}
+                </MenuItem>
+              ))}
           </SubMenu>
         </Menu>
       </Sidebar>
