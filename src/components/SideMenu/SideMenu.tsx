@@ -1,13 +1,18 @@
 import { ButtonWrapper, FakeMenu } from './SideMenu.styles';
 import { Sidebar, Menu, MenuItem, SubMenu, useProSidebar } from 'react-pro-sidebar';
 import { useTranslation } from 'react-i18next';
+import { useMemo } from 'react';
 
 export const SideMenu = () => {
   const { toggleSidebar } = useProSidebar();
   const { t } = useTranslation();
 
-  const countriesFromList = t('countries', { returnObjects: true });
-  const alphabeticList = Object.entries(countriesFromList).sort(([, a], [, b]) => a - b);
+  const alphabeticList = useMemo(() => {
+    const countries = t('countries', { returnObjects: true });
+    return Object.entries(countries)
+      .map(([key, value]) => ({ key, value }))
+      .sort((a, b) => a.value.localeCompare(b.value));
+  }, [t]);
 
   return (
     <>
@@ -42,8 +47,8 @@ export const SideMenu = () => {
           }}>
           <SubMenu label={t('country')} open={true}>
             {alphabeticList.map((country) => (
-              <MenuItem key={country[0]} href={`/country/${country[0]}`}>
-                {country[1]}
+              <MenuItem key={country.key} href={`/country/${country.key}`}>
+                {country.value}
               </MenuItem>
             ))}
           </SubMenu>
