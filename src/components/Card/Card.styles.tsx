@@ -60,7 +60,7 @@ export const LinkWrapper = styled.a`
   }
 `;
 
-export const LinkInfoWrapper = styled.a`
+export const LinkInfoWrapper = styled.div`
   font-size: 14px;
   display: flex;
   flex-direction: row;

@@ -4,7 +4,7 @@ const BASE_URL = 'https://newsapi.org/v2/';
 const API_KEY = 'e412a86a7f0c4c779917cd632550bf20';
 
 export enum ApiUrl {
-  country = 'top-headlines?country=',
+  country = 'top-headlines?sortBy=publishedAt&pageSize=99&country=',
 }
 
 export const apiSecure = axiosLib.create({

@@ -12,7 +12,7 @@ export type Article = {
   content: string | null;
 };
 
-type CountriesData = {
+export type CountriesData = {
   articles: Array<Article>;
   status: string;
   totalResult: number;
@@ -20,7 +20,7 @@ type CountriesData = {
 
 export const useGetNewsFromCountry = ({ country }: { country: string }) => {
   const getNews = async () => {
-    const { data } = await apiSecure.get(`${ApiUrl.country}${country}&sortBy=publishedAt`);
+    const { data } = await apiSecure.get(`${ApiUrl.country}${country}`);
     console.log(data);
     return data as CountriesData;
   };
