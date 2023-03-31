@@ -21,7 +21,7 @@ export const CardWrapper = styled.div`
 export const TitleWrapper = styled.div`
   font-size: 23px;
   font-weight: 600;
-  color: black;
+  color: navy;
   text-align: left;
 `;
 
@@ -94,6 +94,7 @@ export const ListWrapper = styled.div`
     font-weight: 500;
     font-size: 18px;
     margin: 0;
+    color: navy;
   }
 
   p {
