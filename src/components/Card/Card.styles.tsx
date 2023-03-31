@@ -13,7 +13,9 @@ export const CardWrapper = styled.div`
   align-items: flex-start;
   gap: 15px;
   padding-bottom: 20px;
-  width: 350px;
+  width: 100%;
+  max-width: 300px;
+  box-sizing: border-box;
 `;
 
 export const TitleWrapper = styled.div`
@@ -37,8 +39,8 @@ export const DateWrapper = styled.div`
 `;
 
 export const ImgWrapper = styled.img`
-  width: 350px;
-  height: 200px;
+  width: 100%;
+  height: auto;
   overflow: hidden;
 `;
 

@@ -7,6 +7,7 @@ export const CardsWrapper = styled.div<{ isCard: boolean }>`
   align-items: flex-start;
   justify-content: center;
   padding: 30px;
+  box-sizing: border-box;
 
   button {
     width: ${({ isCard }) => (isCard ? 'auto' : '100%')};
