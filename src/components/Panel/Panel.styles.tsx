@@ -7,6 +7,7 @@ export const CardsWrapper = styled.div<{ isCard: boolean }>`
   align-items: flex-start;
   justify-content: center;
   padding: 30px;
+  padding-top: 40px;
   box-sizing: border-box;
 
   button {
