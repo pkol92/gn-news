@@ -53,10 +53,10 @@ export const DescriptionWrapper = styled.div`
 export const LinkWrapper = styled.a`
   text-decoration: none;
   font-size: 14px;
-  color: #726767;
+  color: navy;
   font-weight: 500;
   :hover {
-    color: black;
+    color: purple;
   }
 `;
 
@@ -87,6 +87,7 @@ export const ListWrapper = styled.div`
   gap: 15px;
   align-items: baseline;
   width: 100%;
+  cursor: pointer;
 
   h4 {
     text-align: left;
