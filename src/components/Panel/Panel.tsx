@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { useSelector } from 'react-redux';
-import { useGetNewsFromCountry } from '../../api/getNews';
+import { CountriesData, useGetNewsFromCountry } from '../../api/getNews';
 import { RootState } from '../../store/store';
 import { Card } from '../Card/Card';
 import { CardsWrapper, InfoWrapper } from './Panel.styles';
 
-export const Panel = () => {
-  const pickedCountry = useSelector((state: RootState) => state.country.countryCode);
-  const { data, isLoading, isError } = useGetNewsFromCountry({ country: pickedCountry });
-  const view = useSelector((state: RootState) => state.panelView.view);
+interface PanelProps {
+  data: CountriesData | undefined;
+  isError: boolean;
+  isLoading: boolean;
+}
 
+export const Panel: FC<PanelProps> = ({ data, isError, isLoading }) => {
+  const view = useSelector((state: RootState) => state.panelView.view);
   if (!isLoading && data?.articles.length === 0) {
     return <InfoWrapper>Nie ma wiadomości z tego kraju</InfoWrapper>;
   }
