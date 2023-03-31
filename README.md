@@ -5,6 +5,8 @@
 3. open localhost
 4. enjoy application :)
 
+Lista dostępnych krajów - wybrałam te najbardziej popoluarne wg mnie, które były również dostępne w zewnatrznym API.
+
 # gnNews - gnStudio React.js developer challenge
 
 Witaj, jeżeli znalazłeś się w tym miejscu to najprawdopodobniej chcesz dołączyć do niesamowitego teamu tworzącego rozwiązania szyte na miarę i chcesz w końcu realizować projekty, które nie będą nudne, będą sprawiały Ci frajdę i będą napawały Cię dumą kiedy tylko o nich pomyślisz.
