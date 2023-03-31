@@ -13,10 +13,10 @@ export const ButtonWrapper = styled.button`
   background-color: black;
   color: white;
   height: 30px;
-  width: 50px;
+  width: 60px;
   position: fixed;
   border-end-end-radius: 5px;
   text-align: left;
-  padding-left: 12px;
+  padding: 0 24px;
   opacity: 0.9;
 `;

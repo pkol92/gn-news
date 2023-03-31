@@ -1,0 +1,22 @@
+{
+  "logo": "gnNews",
+  "view": "View",
+  "list": "List",
+  "tiles": "Tiles",
+  "modalInfo": "To read the full article, click to the",
+  "link": "link",
+  "errorHeader": "Oops!",
+  "unexpectedError": "Sorry, an unexpected error has occurred.",
+  "articlesNumber": "Number of articles: {{articlesNumber}}",
+  "descriptionMyExperience": "The most difficult for me was the combination of the correct functioning of the routing with the selected language and react-euery. The greatest fun was fetching data and displaying them in the form of tiles/list.",
+  "modalDifficultiesTitle": "Difficulties",
+  "noArticles": "There is no news from this country",
+  "countries": {
+    "pl": "Poland",
+    "us": "US",
+    "gb": "United Kingdom",
+    "de": "Germany",
+    "fr": "France"
+  },
+  "country": "Country"
+}

@@ -17,6 +17,7 @@ import {
 } from './Card.styles';
 import * as Dialog from '@radix-ui/react-dialog';
 import { format, parseISO } from 'date-fns';
+import { useTranslation } from 'react-i18next';
 
 interface CardProps {
   article: Article;
@@ -24,6 +25,7 @@ interface CardProps {
 }
 
 export const Card: FC<CardProps> = ({ article, isCard }) => {
+  const { t } = useTranslation();
   const { title, description, author, url, content, publishedAt, source, urlToImage } = article;
 
   const cardView = (
@@ -61,9 +63,9 @@ export const Card: FC<CardProps> = ({ article, isCard }) => {
         )}
 
         <LinkInfoWrapper>
-          Żeby przeczytać pełny artykuł kliknij w
+          {t('modalInfo')}
           <LinkWrapper href={`${url}`} target="_blank">
-            link
+            {t('link')}
           </LinkWrapper>
         </LinkInfoWrapper>
         <SourceWrapper>{author}</SourceWrapper>

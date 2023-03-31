@@ -28,3 +28,9 @@ export const LogoWrapper = styled(Link)`
   text-decoration: none;
   color: white;
 `;
+
+export const ActionsWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+`;

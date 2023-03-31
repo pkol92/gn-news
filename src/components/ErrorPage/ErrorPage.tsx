@@ -1,9 +1,11 @@
 import React from 'react';
 import { isRouteErrorResponse, useRouteError } from 'react-router-dom';
 import { ErrorWrapper } from './ErrorPage.style';
+import { useTranslation } from 'react-i18next';
 
 export const ErrorPage = () => {
   const error = useRouteError();
+  const { t } = useTranslation();
 
   if (isRouteErrorResponse(error)) {
     return (
@@ -15,11 +17,8 @@ export const ErrorPage = () => {
 
   return (
     <ErrorWrapper>
-      <h1>Oops!</h1>
-      <p>Sorry, an unexpected error has occurred.</p>
-      <p>
-        <i>Unknown Error</i>
-      </p>
+      <h1>{t('errorHeader')}</h1>
+      <p>{t('unexpectedError')}</p>
     </ErrorWrapper>
   );
 };

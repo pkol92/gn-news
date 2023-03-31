@@ -1,0 +1,22 @@
+{
+  "logo": "gnNews",
+  "view": "Widok",
+  "list": "Lista",
+  "tiles": "Kafelki",
+  "modalInfo": "Żeby przeczytać pełny artykuł kliknij w",
+  "link": "link",
+  "errorHeader": "Ups!",
+  "unexpectedError": "Przepraszamy, pojawił się niespodziewany błąd",
+  "articlesNumber": "Liczba artykułów: {{articlesNumber}}",
+  "descriptionMyExperience": "Najwięcej trudności sprawiło mi połączenie poprawnego funkcjonowania routingu z wybranym językiem oraz react-euery. Największą frajdą było fetchowanie danych i ich wyświetlanie w postaci kafelek/listy.",
+  "modalDifficultiesTitle": "Trudności",
+  "noArticles": "Nie ma wiadomości z tego kraju",
+  "countries": {
+    "pl": "Polska",
+    "us": "US",
+    "gb": "Wielka Brytania",
+    "de": "Niemcy",
+    "fr": "Francja"
+  },
+  "country": "Kraj"
+}
