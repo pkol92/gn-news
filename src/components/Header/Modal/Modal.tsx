@@ -2,6 +2,7 @@ import React, { FC, ReactNode } from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
 import './Modal.css';
 import { Cross2Icon } from '@radix-ui/react-icons';
+import { useTranslation } from 'react-i18next';
 
 interface ModalProps {
   trigger: ReactNode;
@@ -31,10 +32,13 @@ export const Modal: FC<ModalProps> = ({ trigger, content }) => {
 };
 
 export const ModalMenu = () => {
+  const { t } = useTranslation();
   const content = (
     <>
-      <Dialog.Title className="DialogTitle">Tytuł</Dialog.Title>
-      <Dialog.Description className="DialogDescription">Opis</Dialog.Description>
+      <Dialog.Title className="DialogTitle">{t('modalDifficultiesTitle')}</Dialog.Title>
+      <Dialog.Description className="DialogDescription">
+        {t('descriptionMyExperience')}
+      </Dialog.Description>
     </>
   );
 

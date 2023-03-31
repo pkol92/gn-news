@@ -9,7 +9,7 @@ import { MainWrapper } from './MainPanel.styles';
 
 export const MainPanel = () => {
   const outlet = useOutlet();
-  const { data, isLoading, isError } = useQuery(countryQuery('pl'));
+  const { data, isLoading, isError } = useQuery(countryQuery('us'));
 
   return (
     <MainWrapper>

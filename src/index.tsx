@@ -10,6 +10,7 @@ import { ProSidebarProvider } from 'react-pro-sidebar';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { ErrorPage } from './components/ErrorPage/ErrorPage';
 import { Country, loader as countryLoader } from './routes/country';
+import './i18n';
 
 const queryClient = new QueryClient();
 

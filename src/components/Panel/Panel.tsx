@@ -4,6 +4,7 @@ import { CountriesData } from '../../api/getNews';
 import { RootState } from '../../store/store';
 import { Card } from '../Card/Card';
 import { CardsWrapper, InfoWrapper } from './Panel.styles';
+import { useTranslation } from 'react-i18next';
 
 interface PanelProps {
   data: CountriesData | undefined;
@@ -13,9 +14,10 @@ interface PanelProps {
 
 export const Panel: FC<PanelProps> = ({ data, isError, isLoading }) => {
   const view = useSelector((state: RootState) => state.panelView.view);
+  const { t } = useTranslation();
 
   if (!isLoading && data?.articles.length === 0) {
-    return <InfoWrapper>Nie ma wiadomości z tego kraju</InfoWrapper>;
+    return <InfoWrapper>{t('noArticles')}</InfoWrapper>;
   }
 
   return (
@@ -25,7 +27,7 @@ export const Panel: FC<PanelProps> = ({ data, isError, isLoading }) => {
           <Card key={index} article={article} isCard={view === 'card'} />
         ))}
 
-      {isError && <InfoWrapper>Ups coś poszło nie tak</InfoWrapper>}
+      {isError && <InfoWrapper>{t('unexpectedError')}</InfoWrapper>}
     </CardsWrapper>
   );
 };
