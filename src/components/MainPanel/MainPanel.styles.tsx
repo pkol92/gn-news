@@ -2,12 +2,15 @@ import styled from 'styled-components';
 
 export const MainWrapper = styled.div`
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: auto 1fr;
   box-sizing: border-box;
-  /* 
+`;
 
-  @media screen and (max-width: 480px) {
-    grid-template-columns: 1fr;
-    grid-template-rows: 150px auto;
-  } */
+export const InfoWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  font-size: 37px;
+  padding: 40px;
+  line-height: 1.5;
 `;

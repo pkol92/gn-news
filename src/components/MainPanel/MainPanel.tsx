@@ -1,17 +1,19 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import { Outlet } from 'react-router-dom';
-import { RootState } from '../../store/store';
-import { Footer } from '../Footer/Footer';
-import { Panel } from '../Panel/Panel';
+import { useOutlet } from 'react-router-dom';
 import { SideMenu } from '../SideMenu/SideMenu';
-import { MainWrapper } from './MainPanel.styles';
+import { InfoWrapper, MainWrapper } from './MainPanel.styles';
 
 export const MainPanel = () => {
+  const outlet = useOutlet();
   return (
     <MainWrapper>
       <SideMenu />
-      <Outlet />
+      {outlet || (
+        <InfoWrapper>
+          <h3>Witamy w gnNews!</h3>
+          <h6>Wybierz kraj, z którego chcesz zobaczyć wiadomości.</h6>
+        </InfoWrapper>
+      )}
     </MainWrapper>
   );
 };

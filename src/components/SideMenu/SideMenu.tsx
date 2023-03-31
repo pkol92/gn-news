@@ -5,11 +5,6 @@ import { countriesToPick } from './countriesToPick';
 export const SideMenu = () => {
   const { toggleSidebar } = useProSidebar();
 
-  // const handlePick = (code: string) => {
-  //   dispatch(pickCountry(code));
-  //   toggleSidebar(false);
-  // };
-
   return (
     <>
       <ButtonWrapper onClick={() => toggleSidebar(true)}>Kraj</ButtonWrapper>
@@ -43,9 +38,9 @@ export const SideMenu = () => {
           }}>
           <SubMenu label="Kraj" open={true}>
             {countriesToPick
-              .sort((a, b) => (a.label.toLowerCase() < b.label.toLowerCase() ? 1 : -1))
+              .sort((a, b) => (a.label.toLowerCase() < b.label.toLowerCase() ? -1 : 1))
               .map((country) => (
-                <MenuItem key={country.code} href={`country/${country.code}`}>
+                <MenuItem key={country.code} href={`/country/${country.code}`}>
                   {country.label}
                 </MenuItem>
               ))}

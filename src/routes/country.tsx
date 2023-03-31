@@ -1,7 +1,7 @@
 import React from 'react';
 import { QueryClient, useQuery } from 'react-query';
-import { Params, useLoaderData, useParams } from 'react-router-dom';
-import { getNews, countryQuery } from '../api/getNews';
+import { Params, useParams } from 'react-router-dom';
+import { countryQuery } from '../api/getNews';
 import { Footer } from '../components/Footer/Footer';
 import { Panel } from '../components/Panel/Panel';
 
