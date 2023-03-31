@@ -11,6 +11,7 @@ export const SideMenu = () => {
   const { toggleSidebar } = useProSidebar();
   const { t } = useTranslation();
 
+  //sort alphabetic countries from translated file and add flag to each country
   const alphabeticList = useMemo(() => {
     const countries = t('countries', { returnObjects: true });
     return Object.entries(countries)
