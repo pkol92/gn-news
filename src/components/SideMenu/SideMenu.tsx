@@ -1,7 +1,11 @@
-import { ButtonWrapper, FakeMenu } from './SideMenu.styles';
+import { ButtonWrapper, CountryLabelWrapper, FakeMenu, LinkWrapper } from './SideMenu.styles';
 import { Sidebar, Menu, MenuItem, SubMenu, useProSidebar } from 'react-pro-sidebar';
 import { useTranslation } from 'react-i18next';
 import { useMemo } from 'react';
+import { ReactComponent as PlFlag } from '../../icons/pl.svg';
+import { ReactComponent as GbFlag } from '../../icons/gb.svg';
+import { ReactComponent as DeFlag } from '../../icons/de.svg';
+import { ReactComponent as UsFlag } from '../../icons/us.svg';
 
 export const SideMenu = () => {
   const { toggleSidebar } = useProSidebar();
@@ -10,7 +14,27 @@ export const SideMenu = () => {
   const alphabeticList = useMemo(() => {
     const countries = t('countries', { returnObjects: true });
     return Object.entries(countries)
-      .map(([key, value]) => ({ key, value }))
+      .map(([key, value]) => {
+        let flag;
+        switch (key) {
+          case 'pl':
+            flag = <PlFlag width={20} height={10} />;
+            break;
+          case 'gb':
+            flag = <GbFlag width={20} height={10} />;
+            break;
+          case 'de':
+            flag = <DeFlag width={20} height={10} />;
+            break;
+          case 'us':
+            flag = <UsFlag width={20} height={10} />;
+            break;
+          default:
+            flag = null;
+            break;
+        }
+        return { key, value, flag };
+      })
       .sort((a, b) => a.value.localeCompare(b.value));
   }, [t]);
 
@@ -26,7 +50,7 @@ export const SideMenu = () => {
           border: 'none',
         }}
         breakPoint="sm"
-        width="150px"
+        width="250px"
         backgroundColor="black">
         <Menu
           menuItemStyles={{
@@ -47,8 +71,16 @@ export const SideMenu = () => {
           }}>
           <SubMenu label={t('country')} open={true}>
             {alphabeticList.map((country) => (
-              <MenuItem key={country.key} href={`/country/${country.key}`}>
-                {country.value}
+              <MenuItem
+                key={country.key}
+                component={<LinkWrapper to={`/country/${country.key}`} />}
+                onClick={() => {
+                  toggleSidebar(false);
+                }}>
+                <CountryLabelWrapper>
+                  {country.flag}
+                  {country.value}
+                </CountryLabelWrapper>
               </MenuItem>
             ))}
           </SubMenu>
