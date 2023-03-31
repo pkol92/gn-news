@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import panelViewReducer from '../slices/panelViewSlice';
+import countryReducer from '../slices/countrySlice';
 
 export const store = configureStore({
   reducer: {
     panelView: panelViewReducer,
+    country: countryReducer,
   },
 });
 

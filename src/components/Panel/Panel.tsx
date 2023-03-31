@@ -6,7 +6,8 @@ import { Card } from '../Card/Card';
 import { CardsWrapper, InfoWrapper } from './Panel.styles';
 
 export const Panel = () => {
-  const { data, isLoading, isError } = useGetNewsFromCountry({ country: 'us' });
+  const pickedCountry = useSelector((state: RootState) => state.country.countryCode);
+  const { data, isLoading, isError } = useGetNewsFromCountry({ country: pickedCountry });
   const view = useSelector((state: RootState) => state.panelView.view);
 
   if (!isLoading && data?.articles.length === 0) {

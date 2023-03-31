@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { Provider } from 'react-redux';
 import { store } from './store/store';
+import { ProSidebarProvider } from 'react-pro-sidebar';
 
 const queryClient = new QueryClient();
 
@@ -14,7 +15,9 @@ root.render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient} contextSharing={true}>
       <Provider store={store}>
-        <App />
+        <ProSidebarProvider>
+          <App />
+        </ProSidebarProvider>
       </Provider>
     </QueryClientProvider>
   </React.StrictMode>,

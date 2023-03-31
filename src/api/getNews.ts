@@ -20,7 +20,7 @@ type CountriesData = {
 
 export const useGetNewsFromCountry = ({ country }: { country: string }) => {
   const getNews = async () => {
-    const { data } = await apiSecure.get(`${ApiUrl.country}${country}`);
+    const { data } = await apiSecure.get(`${ApiUrl.country}${country}&sortBy=publishedAt`);
     console.log(data);
     return data as CountriesData;
   };
