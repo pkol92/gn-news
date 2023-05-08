@@ -8,8 +8,8 @@
   "errorHeader": "Oops!",
   "unexpectedError": "Sorry, an unexpected error has occurred.",
   "articlesNumber": "Number of articles: {{articlesNumber}}",
-  "descriptionMyExperience": "The most difficult for me was the combination of the correct functioning of the routing with the selected language and react-euery. The greatest fun was fetching data and displaying them in the form of tiles/list.",
-  "modalDifficultiesTitle": "Difficulties",
+  "descriptionMyExperience": "If you like what I do, check out more of my projects on GH",
+  "modalDifficultiesTitle": "I'm cool modal",
   "noArticles": "There is no news from this country",
   "countries": {
     "pl": "Poland",
