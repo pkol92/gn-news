@@ -8,8 +8,8 @@
   "errorHeader": "Ups!",
   "unexpectedError": "Przepraszamy, pojawił się niespodziewany błąd",
   "articlesNumber": "Liczba artykułów: {{articlesNumber}}",
-  "descriptionMyExperience": "Najwięcej trudności sprawiło mi połączenie poprawnego funkcjonowania routingu z wybranym językiem oraz react-euery. Największą frajdą było fetchowanie danych i ich wyświetlanie w postaci kafelek/listy.",
-  "modalDifficultiesTitle": "Trudności",
+  "descriptionMyExperience": "Jeśli podoba Ci się to co robię, sprawdź więcej moich projektów na GH",
+  "modalDifficultiesTitle": "Jestem super modalem",
   "noArticles": "Nie ma wiadomości z tego kraju",
   "countries": {
     "pl": "Polska",
